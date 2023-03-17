@@ -5,11 +5,14 @@ import static java.lang.Character.isDigit;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import org.mariuszgromada.math.mxparser.*;
 
 public class Calculator extends AppCompatActivity
 {
@@ -42,6 +45,13 @@ public class Calculator extends AppCompatActivity
         Button delAllButton = findViewById(R.id.p2);
         Button changeSignButton = findViewById(R.id.p3);
         Button resButton = findViewById(R.id.p18);
+
+        Button backToMenu = findViewById(R.id.p20);
+        backToMenu.setOnClickListener(view ->
+        {
+            Intent intent = new Intent(Calculator.this, MainActivity.class);
+            startActivity(intent);
+        });
 
         delButton.setOnClickListener(new View.OnClickListener()
         {
@@ -102,7 +112,9 @@ public class Calculator extends AppCompatActivity
                 String text = textView.getText().toString();
                 if(isDigit(text.charAt(text.length()-1)))
                 {
-
+                    Expression e = new Expression(text);
+                    String res = Double.toString(e.calculate());
+                    textView.setText(res);
                 }
                 else
                 {
