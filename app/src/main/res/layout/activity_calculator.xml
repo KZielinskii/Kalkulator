@@ -29,7 +29,8 @@
                 android:layout_height="wrap_content"
                 android:gravity="right"
                 android:includeFontPadding="true"
-                android:textSize="32dp"
+                android:textSize="32sp"
+                android:textColor="#FFFFFF"
                 android:text="@string/result_view"
                 android:textAppearance="@style/TextAppearance.AppCompat.Large" />
 
@@ -252,7 +253,7 @@
                 android:id="@+id/p18"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_weight=".50"
+                android:layout_weight=".25"
                 android:backgroundTint="#555599"
                 android:text="="
                 android:textAppearance="@style/TextAppearance.AppCompat.Large"
@@ -267,7 +268,15 @@
                 android:text="+"
                 android:textAppearance="@style/TextAppearance.AppCompat.Large"
                 android:visibility="visible" />
-
+            <Button
+                android:id="@+id/p20"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight=".25"
+                android:backgroundTint="#555599"
+                android:text="Menu"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                android:visibility="visible" />
 
         </LinearLayout>
     </LinearLayout>
