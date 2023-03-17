@@ -15,10 +15,21 @@ public class MainActivity extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Button mButtonCalc1 = findViewById(R.id.button);
-        mButtonCalc1.setOnClickListener(view ->
+        Button buttonCalc1 = findViewById(R.id.button);
+        Button buttonCalc2 = findViewById(R.id.button2);
+        Button buttonInfo = findViewById(R.id.button3);
+        Button buttonExit = findViewById(R.id.button4);
+
+        buttonCalc1.setOnClickListener(view ->
         {
             Intent intent = new Intent(MainActivity.this, Calculator.class);
+            startActivity(intent);
+        });
+
+
+        buttonCalc2.setOnClickListener(view ->
+        {
+            Intent intent = new Intent(MainActivity.this, CalculatorScientific.class);
             startActivity(intent);
         });
     }
