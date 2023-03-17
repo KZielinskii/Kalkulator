@@ -12,17 +12,15 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import org.mariuszgromada.math.mxparser.*;
+import org.mariuszgromada.math.mxparser.Expression;
 
-public class Calculator extends AppCompatActivity
+public class CalculatorScientific extends AppCompatActivity
 {
     static private final String DEFAULT_VALUE = "0";
-
     @Override
-    protected void onCreate(Bundle savedInstanceState)
-    {
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_calculator);
+        setContentView(R.layout.activity_calculator_scientific);
         TextView textView = findViewById(R.id.result);
 
         addButtonListener(findViewById(R.id.p4), textView);
@@ -40,18 +38,169 @@ public class Calculator extends AppCompatActivity
         addButtonListener(findViewById(R.id.p16), textView);
         addButtonListener(findViewById(R.id.p17), textView);
         addButtonListener(findViewById(R.id.p19), textView);
+        addButtonListener(findViewById(R.id.p27), textView);
 
         Button delButton = findViewById(R.id.p1);
         Button delAllButton = findViewById(R.id.p2);
         Button changeSignButton = findViewById(R.id.p3);
         Button resButton = findViewById(R.id.p18);
-
         Button backToMenu = findViewById(R.id.p20);
+
+        Button buttonSin = findViewById(R.id.p21);
+        Button buttonCos = findViewById(R.id.p22);
+        Button buttonTan = findViewById(R.id.p23);
+        Button buttonLn = findViewById(R.id.p24);
+        Button buttonSqrt = findViewById(R.id.p25);
+        Button buttonXto2 = findViewById(R.id.p26);
+        Button buttonLog = findViewById(R.id.p28);
+
+
         backToMenu.setOnClickListener(view ->
         {
-            Intent intent = new Intent(Calculator.this, MainActivity.class);
+            Intent intent = new Intent(CalculatorScientific.this, MainActivity.class);
             startActivity(intent);
         });
+
+        buttonSin.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View view)
+            {
+                String text = textView.getText().toString();
+                if(isSingleNumber(text))
+                {
+                    text = "sin(" + text + ")";
+                    Expression e = new Expression(text);
+                    String res = Double.toString(e.calculate());
+                    textView.setText(res);
+                }
+                else
+                {
+                    Toast.makeText(getApplicationContext(), "Nie można wykonać tego obliczenia!", Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
+
+        buttonCos.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View view)
+            {
+                String text = textView.getText().toString();
+                if(isSingleNumber(text))
+                {
+                    text = "cos(" + text + ")";
+                    Expression e = new Expression(text);
+                    String res = Double.toString(e.calculate());
+                    textView.setText(res);
+                }
+                else
+                {
+                    Toast.makeText(getApplicationContext(), "Nie można wykonać tego obliczenia!", Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
+
+        buttonTan.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View view)
+            {
+                String text = textView.getText().toString();
+                if(isSingleNumber(text))
+                {
+                    text = "tan(" + text + ")";
+                    Expression e = new Expression(text);
+                    String res = Double.toString(e.calculate());
+                    textView.setText(res);
+                }
+                else
+                {
+                    Toast.makeText(getApplicationContext(), "Nie można wykonać tego obliczenia!", Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
+
+        buttonLn.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View view)
+            {
+                String text = textView.getText().toString();
+                if(isSingleNumber(text))
+                {
+                    text = "ln(" + text + ")";
+                    Expression e = new Expression(text);
+                    String res = Double.toString(e.calculate());
+                    textView.setText(res);
+                }
+                else
+                {
+                    Toast.makeText(getApplicationContext(), "Nie można wykonać tego obliczenia!", Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
+
+        buttonSqrt.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View view)
+            {
+                String text = textView.getText().toString();
+                if(isSingleNumber(text))
+                {
+                    text = "sqrt(" + text + ")";
+                    Expression e = new Expression(text);
+                    String res = Double.toString(e.calculate());
+                    textView.setText(res);
+                }
+                else
+                {
+                    Toast.makeText(getApplicationContext(), "Nie można wykonać tego obliczenia!", Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
+
+        buttonXto2.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View view)
+            {
+                String text = textView.getText().toString();
+                if(isSingleNumber(text))
+                {
+                    text = text + "^2";
+                    Expression e = new Expression(text);
+                    String res = Double.toString(e.calculate());
+                    textView.setText(res);
+                }
+                else
+                {
+                    Toast.makeText(getApplicationContext(), "Nie można wykonać tego obliczenia!", Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
+
+        buttonLog.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View view)
+            {
+                String text = textView.getText().toString();
+                if(isSingleNumber(text))
+                {
+                    text = "log10(" + text + ")";
+                    Expression e = new Expression(text);
+                    String res = Double.toString(e.calculate());
+                    textView.setText(res);
+                }
+                else
+                {
+                    Toast.makeText(getApplicationContext(), "Nie można wykonać tego obliczenia!", Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
+
 
         delButton.setOnClickListener(new View.OnClickListener()
         {
@@ -124,11 +273,6 @@ public class Calculator extends AppCompatActivity
         });
     }
 
-    @Override
-    protected void onSaveInstanceState(@NonNull Bundle outState)
-    {
-        super.onSaveInstanceState(outState);
-    }
     private boolean isSingleNumber(String text)
     {
         for (int i = text.length() - 1; i >= 0; i--)
@@ -169,6 +313,7 @@ public class Calculator extends AppCompatActivity
         if (button == findViewById(R.id.p12)) return false;
         if (button == findViewById(R.id.p16)) return false;
         if (button == findViewById(R.id.p19)) return false;
+        if (button == findViewById(R.id.p27)) return false;
         return true;
     }
 
@@ -200,7 +345,7 @@ public class Calculator extends AppCompatActivity
     private boolean changeOperation(String text)
     {
         char ch = text.charAt(text.length() - 1);
-        return ch == '*' || ch == '/' || ch == '-' || ch == '+';
+        return ch == '*' || ch == '/' || ch == '-' || ch == '+' || ch == '^';
     }
 
     private boolean isCorrectOperation(String text)
@@ -226,5 +371,11 @@ public class Calculator extends AppCompatActivity
     private boolean isDotClick(Button button)
     {
         return (button == findViewById(R.id.p4));
+    }
+
+    @Override
+    protected void onSaveInstanceState(@NonNull Bundle outState)
+    {
+        super.onSaveInstanceState(outState);
     }
 }
