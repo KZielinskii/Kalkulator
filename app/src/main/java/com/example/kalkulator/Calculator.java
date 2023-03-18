@@ -17,13 +17,13 @@ import org.mariuszgromada.math.mxparser.*;
 public class Calculator extends AppCompatActivity
 {
     static private final String DEFAULT_VALUE = "0";
-
+    private TextView textView;
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_calculator);
-        TextView textView = findViewById(R.id.result);
+        textView = findViewById(R.id.result);
 
         addButtonListener(findViewById(R.id.p4), textView);
         addButtonListener(findViewById(R.id.p5), textView);
@@ -128,7 +128,16 @@ public class Calculator extends AppCompatActivity
     protected void onSaveInstanceState(@NonNull Bundle outState)
     {
         super.onSaveInstanceState(outState);
+        outState.putCharSequence("key_text", textView.getText());
     }
+
+    @Override
+    protected void onRestoreInstanceState(@NonNull Bundle savedInstanceState)
+    {
+        super.onRestoreInstanceState(savedInstanceState);
+        textView.setText(savedInstanceState.getCharSequence("key_text",DEFAULT_VALUE));
+    }
+
     private boolean isSingleNumber(String text)
     {
         for (int i = text.length() - 1; i >= 0; i--)
