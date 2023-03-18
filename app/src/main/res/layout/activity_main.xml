@@ -26,26 +26,26 @@
 
         <Button
             android:id="@+id/button"
-            android:layout_width="wrap_content"
+            android:layout_width="256dp"
             android:layout_height="10dp"
             android:layout_weight="0.25"
             android:gravity="center"
             android:backgroundTint="#9C27B0"
-            android:text="@string/calc_1" />
+            android:text="@string/calc_simple" />
 
         <Button
             android:id="@+id/button2"
-            android:layout_width="wrap_content"
+            android:layout_width="256dp"
             android:layout_height="10dp"
             android:layout_weight="0.25"
             android:gravity="center"
             android:backgroundTint="#9C27B0"
-            android:text="@string/calc_2" />
+            android:text="@string/calc_sci" />
 
 
         <Button
             android:id="@+id/button3"
-            android:layout_width="wrap_content"
+            android:layout_width="256dp"
             android:layout_height="10dp"
             android:layout_weight="0.25"
             android:gravity="center"
@@ -54,7 +54,7 @@
 
         <Button
             android:id="@+id/button4"
-            android:layout_width="wrap_content"
+            android:layout_width="256dp"
             android:layout_height="10dp"
             android:layout_weight="0.25"
             android:gravity="center"
