@@ -6,56 +6,61 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <Button
-        android:id="@+id/button"
-        android:layout_width="198dp"
-        android:layout_height="60dp"
-        android:backgroundTint="#9C27B0"
-        android:text="@string/kalkulator_prosty"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.3" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:paddingTop="60dp"
+        android:paddingBottom="60dp"
+        android:background="#7777BB"
+        android:orientation="vertical">
 
-    <Button
-        android:id="@+id/button2"
-        android:layout_width="269dp"
-        android:layout_height="60dp"
-        android:backgroundTint="#9C27B0"
-        android:text="@string/kalkulaotr_zaawansowany"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.4" />
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="10dp"
+            android:layout_weight="0.25"
+            android:gravity="center"
+            android:src="@drawable/logo" />
 
 
-    <Button
-        android:id="@+id/button3"
-        android:layout_width="88dp"
-        android:layout_height="60dp"
-        android:backgroundTint="#9C27B0"
-        android:text="@string/o_mnie"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.5" />
+        <Button
+            android:id="@+id/button"
+            android:layout_width="wrap_content"
+            android:layout_height="10dp"
+            android:layout_weight="0.25"
+            android:gravity="center"
+            android:backgroundTint="#9C27B0"
+            android:text="@string/calc_1" />
 
-    <Button
-        android:id="@+id/button4"
-        android:layout_width="88dp"
-        android:layout_height="60dp"
-        android:backgroundTint="#9C27B0"
-        android:text="@string/wyjdz"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.6" />
+        <Button
+            android:id="@+id/button2"
+            android:layout_width="wrap_content"
+            android:layout_height="10dp"
+            android:layout_weight="0.25"
+            android:gravity="center"
+            android:backgroundTint="#9C27B0"
+            android:text="@string/calc_2" />
+
+
+        <Button
+            android:id="@+id/button3"
+            android:layout_width="wrap_content"
+            android:layout_height="10dp"
+            android:layout_weight="0.25"
+            android:gravity="center"
+            android:backgroundTint="#9C27B0"
+            android:text="@string/info" />
+
+        <Button
+            android:id="@+id/button4"
+            android:layout_width="wrap_content"
+            android:layout_height="10dp"
+            android:layout_weight="0.25"
+            android:gravity="center"
+            android:backgroundTint="#9C27B0"
+            android:text="@string/exit" />
+
+    </LinearLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

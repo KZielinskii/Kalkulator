@@ -28,10 +28,10 @@
                 android:layout_height="wrap_content"
                 android:gravity="right"
                 android:includeFontPadding="true"
-                android:textSize="32sp"
-                android:textColor="#FFFFFF"
                 android:text="@string/result_view"
-                android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+                android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                android:textColor="#FFFFFF"
+                android:textSize="32sp" />
 
         </LinearLayout>
 
@@ -375,6 +375,7 @@
                 android:textAppearance="@style/TextAppearance.AppCompat.Large"
                 android:textSize="16sp"
                 android:visibility="visible" />
+
             <Button
                 android:id="@+id/p20"
                 android:layout_width="0dp"
