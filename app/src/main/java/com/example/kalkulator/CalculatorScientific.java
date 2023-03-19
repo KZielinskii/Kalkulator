@@ -54,6 +54,7 @@ public class CalculatorScientific extends AppCompatActivity {
         Button buttonSqrt = findViewById(R.id.p25);
         Button buttonXto2 = findViewById(R.id.p26);
         Button buttonLog = findViewById(R.id.p28);
+        Button buttonProc = findViewById(R.id.p29);
 
 
         backToMenu.setOnClickListener(view ->
@@ -203,6 +204,21 @@ public class CalculatorScientific extends AppCompatActivity {
                     Toast.makeText(getApplicationContext(), "Nie można zmienić znaku wyrażenia!", Toast.LENGTH_SHORT).show();
                 }
 
+            }
+        });
+
+        buttonProc.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String text = textView.getText().toString();
+                if (isSingleNumber(text)) {
+                    text = text + "%";
+                    Expression e = new Expression(text);
+                    String res = Double.toString(e.calculate());
+                    textView.setText(res);
+                } else {
+                    Toast.makeText(getApplicationContext(), "Nie można wykonać tego obliczenia!", Toast.LENGTH_SHORT).show();
+                }
             }
         });
 
