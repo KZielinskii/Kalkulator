@@ -46,12 +46,14 @@
                 android:id="@+id/p1"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_weight=".25"
+                android:layout_weight=".5"
                 android:backgroundTint="#555599"
                 android:text="&lt;"
                 android:textAppearance="@style/TextAppearance.AppCompat.Large"
                 android:textSize="16sp"
-                android:visibility="visible" />
+                android:visibility="visible"
+                android:layout_marginStart="4dp"
+                android:layout_marginEnd="4dp"/>
 
             <Button
                 android:id="@+id/p2"
@@ -62,7 +64,8 @@
                 android:text="C"
                 android:textAppearance="@style/TextAppearance.AppCompat.Large"
                 android:textSize="16sp"
-                android:visibility="visible" />
+                android:visibility="visible"
+                android:layout_marginEnd="4dp"/>
 
             <Button
                 android:id="@+id/p3"
@@ -70,10 +73,11 @@
                 android:layout_height="match_parent"
                 android:layout_weight=".25"
                 android:backgroundTint="#555599"
-                android:text="+-"
+                android:text="±"
                 android:textAppearance="@style/TextAppearance.AppCompat.Large"
                 android:textSize="16sp"
-                android:visibility="visible" />
+                android:visibility="visible"
+                android:layout_marginEnd="4dp"/>
 
             <Button
                 android:id="@+id/p4"
@@ -104,7 +108,8 @@
                 android:text="sin"
                 android:textAppearance="@style/TextAppearance.AppCompat.Large"
                 android:textSize="16sp"
-                android:visibility="visible" />
+                android:visibility="visible"
+                android:layout_marginEnd="4dp"/>
 
             <Button
                 android:id="@+id/p22"
@@ -115,7 +120,8 @@
                 android:text="cos"
                 android:textAppearance="@style/TextAppearance.AppCompat.Large"
                 android:textSize="16sp"
-                android:visibility="visible" />
+                android:visibility="visible"
+                android:layout_marginEnd="4dp"/>
 
             <Button
                 android:id="@+id/p23"
@@ -126,7 +132,8 @@
                 android:text="tan"
                 android:textAppearance="@style/TextAppearance.AppCompat.Large"
                 android:textSize="16sp"
-                android:visibility="visible" />
+                android:visibility="visible"
+                android:layout_marginEnd="4dp"/>
 
             <Button
                 android:id="@+id/p24"
@@ -137,7 +144,8 @@
                 android:text="ln"
                 android:textAppearance="@style/TextAppearance.AppCompat.Large"
                 android:textSize="16sp"
-                android:visibility="visible" />
+                android:visibility="visible"
+                android:layout_marginEnd="4dp"/>
 
             <Button
                 android:id="@+id/p29"
@@ -168,7 +176,8 @@
                 android:text="7"
                 android:textAppearance="@style/TextAppearance.AppCompat.Large"
                 android:textSize="16sp"
-                android:visibility="visible" />
+                android:visibility="visible"
+                android:layout_marginEnd="4dp"/>
 
             <Button
                 android:id="@+id/p6"
@@ -179,7 +188,8 @@
                 android:text="8"
                 android:textAppearance="@style/TextAppearance.AppCompat.Large"
                 android:textSize="16sp"
-                android:visibility="visible" />
+                android:visibility="visible"
+                android:layout_marginEnd="4dp"/>
 
             <Button
                 android:id="@+id/p7"
@@ -190,7 +200,8 @@
                 android:text="9"
                 android:textAppearance="@style/TextAppearance.AppCompat.Large"
                 android:textSize="16sp"
-                android:visibility="visible" />
+                android:visibility="visible"
+                android:layout_marginEnd="4dp"/>
 
             <Button
                 android:id="@+id/p8"
@@ -201,7 +212,8 @@
                 android:text="/"
                 android:textAppearance="@style/TextAppearance.AppCompat.Large"
                 android:textSize="16sp"
-                android:visibility="visible" />
+                android:visibility="visible"
+                android:layout_marginEnd="4dp"/>
 
             <Button
                 android:id="@+id/p25"
@@ -233,7 +245,8 @@
                 android:text="4"
                 android:textAppearance="@style/TextAppearance.AppCompat.Large"
                 android:textSize="16sp"
-                android:visibility="visible" />
+                android:visibility="visible"
+                android:layout_marginEnd="4dp"/>
 
             <Button
                 android:id="@+id/p10"
@@ -244,7 +257,8 @@
                 android:text="5"
                 android:textAppearance="@style/TextAppearance.AppCompat.Large"
                 android:textSize="16sp"
-                android:visibility="visible" />
+                android:visibility="visible"
+                android:layout_marginEnd="4dp"/>
 
             <Button
                 android:id="@+id/p11"
@@ -255,7 +269,8 @@
                 android:text="6"
                 android:textAppearance="@style/TextAppearance.AppCompat.Large"
                 android:textSize="16sp"
-                android:visibility="visible" />
+                android:visibility="visible"
+                android:layout_marginEnd="4dp"/>
 
             <Button
                 android:id="@+id/p12"
@@ -266,7 +281,8 @@
                 android:text="*"
                 android:textAppearance="@style/TextAppearance.AppCompat.Large"
                 android:textSize="16sp"
-                android:visibility="visible" />
+                android:visibility="visible"
+                android:layout_marginEnd="4dp"/>
 
             <Button
                 android:id="@+id/p26"
@@ -298,7 +314,8 @@
                 android:text="1"
                 android:textAppearance="@style/TextAppearance.AppCompat.Large"
                 android:textSize="16sp"
-                android:visibility="visible" />
+                android:visibility="visible"
+                android:layout_marginEnd="4dp"/>
 
             <Button
                 android:id="@+id/p14"
@@ -309,7 +326,8 @@
                 android:text="2"
                 android:textAppearance="@style/TextAppearance.AppCompat.Large"
                 android:textSize="16sp"
-                android:visibility="visible" />
+                android:visibility="visible"
+                android:layout_marginEnd="4dp"/>
 
             <Button
                 android:id="@+id/p15"
@@ -320,7 +338,8 @@
                 android:text="3"
                 android:textAppearance="@style/TextAppearance.AppCompat.Large"
                 android:textSize="16sp"
-                android:visibility="visible" />
+                android:visibility="visible"
+                android:layout_marginEnd="4dp"/>
 
             <Button
                 android:id="@+id/p16"
@@ -331,7 +350,8 @@
                 android:text="-"
                 android:textAppearance="@style/TextAppearance.AppCompat.Large"
                 android:textSize="16sp"
-                android:visibility="visible" />
+                android:visibility="visible"
+                android:layout_marginEnd="4dp"/>
 
             <Button
                 android:id="@+id/p27"
@@ -363,18 +383,20 @@
                 android:text="0"
                 android:textAppearance="@style/TextAppearance.AppCompat.Large"
                 android:textSize="16sp"
-                android:visibility="visible" />
+                android:visibility="visible"
+                android:layout_marginEnd="4dp"/>
 
             <Button
-                android:id="@+id/p18"
+                android:id="@+id/p28"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight=".25"
                 android:backgroundTint="#555599"
-                android:text="="
+                android:text="Log"
                 android:textAppearance="@style/TextAppearance.AppCompat.Large"
                 android:textSize="16sp"
-                android:visibility="visible" />
+                android:visibility="visible"
+                android:layout_marginEnd="4dp"/>
 
             <Button
                 android:id="@+id/p19"
@@ -385,26 +407,28 @@
                 android:text="+"
                 android:textAppearance="@style/TextAppearance.AppCompat.Large"
                 android:textSize="16sp"
-                android:visibility="visible" />
+                android:visibility="visible"
+                android:layout_marginEnd="4dp"/>
+
+            <Button
+                android:id="@+id/p18"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight=".25"
+                android:backgroundTint="#995555"
+                android:text="="
+                android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                android:textSize="16sp"
+                android:visibility="visible"
+                android:layout_marginEnd="4dp"/>
 
             <Button
                 android:id="@+id/p20"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight=".25"
-                android:backgroundTint="#555599"
+                android:backgroundTint="#444488"
                 android:text="Menu"
-                android:textAppearance="@style/TextAppearance.AppCompat.Large"
-                android:textSize="16sp"
-                android:visibility="visible" />
-
-            <Button
-                android:id="@+id/p28"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight=".25"
-                android:backgroundTint="#555599"
-                android:text="log"
                 android:textAppearance="@style/TextAppearance.AppCompat.Large"
                 android:textSize="16sp"
                 android:visibility="visible" />
