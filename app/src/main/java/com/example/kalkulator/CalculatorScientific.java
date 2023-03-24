@@ -15,12 +15,6 @@ import android.widget.Toast;
 
 import org.mariuszgromada.math.mxparser.Expression;
 
-//todo nowy xml tablet wieksza czcionka
-//todo infinity nan
-//todo +- musi dzałać +
-//todo menu no history
-//todo ograniczenie jednej liczby +
-
 public class CalculatorScientific extends AppCompatActivity {
     static private final String DEFAULT_VALUE = "0";
     private TextView textView;
