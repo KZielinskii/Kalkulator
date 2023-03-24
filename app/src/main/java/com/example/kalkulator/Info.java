@@ -17,7 +17,9 @@ public class Info extends AppCompatActivity {
         backToMenu.setOnClickListener(view ->
         {
             Intent intent = new Intent(Info.this, MainActivity.class);
+            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
             startActivity(intent);
+            finish();
         });
     }
 }

@@ -21,20 +21,26 @@ public class MainActivity extends AppCompatActivity {
         buttonCalc1.setOnClickListener(view ->
         {
             Intent intent = new Intent(MainActivity.this, Calculator.class);
+            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
             startActivity(intent);
+            finish();
         });
 
 
         buttonCalc2.setOnClickListener(view ->
         {
             Intent intent = new Intent(MainActivity.this, CalculatorScientific.class);
+            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
             startActivity(intent);
+            finish();
         });
 
         buttonInfo.setOnClickListener(view ->
         {
             Intent intent = new Intent(MainActivity.this, Info.class);
+            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
             startActivity(intent);
+            finish();
         });
 
         buttonExit.setOnClickListener(view ->

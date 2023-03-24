@@ -1,5 +1,6 @@
 package com.example.kalkulator;
 
+import static java.lang.Character.isAlphabetic;
 import static java.lang.Character.isDigit;
 
 import androidx.annotation.NonNull;
@@ -13,6 +14,12 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import org.mariuszgromada.math.mxparser.Expression;
+
+//todo nowy xml tablet wieksza czcionka
+//todo infinity nan
+//todo +- musi dzałać +
+//todo menu no history
+//todo ograniczenie jednej liczby +
 
 public class CalculatorScientific extends AppCompatActivity {
     static private final String DEFAULT_VALUE = "0";
@@ -60,21 +67,19 @@ public class CalculatorScientific extends AppCompatActivity {
         backToMenu.setOnClickListener(view ->
         {
             Intent intent = new Intent(CalculatorScientific.this, MainActivity.class);
+            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
             startActivity(intent);
+            finish();
         });
 
         buttonSin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 String text = textView.getText().toString();
-                if (isSingleNumber(text)) {
-                    text = "sin(" + text + ")";
-                    Expression e = new Expression(text);
-                    String res = Double.toString(e.calculate());
-                    textView.setText(res);
-                } else {
-                    Toast.makeText(getApplicationContext(), "Nie można wykonać tego obliczenia!", Toast.LENGTH_SHORT).show();
-                }
+                text = "sin(" + text + ")";
+                Expression e = new Expression(text);
+                String res = Double.toString(e.calculate());
+                textView.setText(res);
             }
         });
 
@@ -82,14 +87,10 @@ public class CalculatorScientific extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 String text = textView.getText().toString();
-                if (isSingleNumber(text)) {
-                    text = "cos(" + text + ")";
-                    Expression e = new Expression(text);
-                    String res = Double.toString(e.calculate());
-                    textView.setText(res);
-                } else {
-                    Toast.makeText(getApplicationContext(), "Nie można wykonać tego obliczenia!", Toast.LENGTH_SHORT).show();
-                }
+                text = "cos(" + text + ")";
+                Expression e = new Expression(text);
+                String res = Double.toString(e.calculate());
+                textView.setText(res);
             }
         });
 
@@ -97,14 +98,10 @@ public class CalculatorScientific extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 String text = textView.getText().toString();
-                if (isSingleNumber(text)) {
-                    text = "tan(" + text + ")";
-                    Expression e = new Expression(text);
-                    String res = Double.toString(e.calculate());
-                    textView.setText(res);
-                } else {
-                    Toast.makeText(getApplicationContext(), "Nie można wykonać tego obliczenia!", Toast.LENGTH_SHORT).show();
-                }
+                text = "tan(" + text + ")";
+                Expression e = new Expression(text);
+                String res = Double.toString(e.calculate());
+                textView.setText(res);
             }
         });
 
@@ -112,14 +109,10 @@ public class CalculatorScientific extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 String text = textView.getText().toString();
-                if (isSingleNumber(text)) {
-                    text = "ln(" + text + ")";
-                    Expression e = new Expression(text);
-                    String res = Double.toString(e.calculate());
-                    textView.setText(res);
-                } else {
-                    Toast.makeText(getApplicationContext(), "Nie można wykonać tego obliczenia!", Toast.LENGTH_SHORT).show();
-                }
+                text = "ln(" + text + ")";
+                Expression e = new Expression(text);
+                String res = Double.toString(e.calculate());
+                textView.setText(res);
             }
         });
 
@@ -127,14 +120,10 @@ public class CalculatorScientific extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 String text = textView.getText().toString();
-                if (isSingleNumber(text)) {
-                    text = "sqrt(" + text + ")";
-                    Expression e = new Expression(text);
-                    String res = Double.toString(e.calculate());
-                    textView.setText(res);
-                } else {
-                    Toast.makeText(getApplicationContext(), "Nie można wykonać tego obliczenia!", Toast.LENGTH_SHORT).show();
-                }
+                text = "sqrt(" + text + ")";
+                Expression e = new Expression(text);
+                String res = Double.toString(e.calculate());
+                textView.setText(res);
             }
         });
 
@@ -142,14 +131,10 @@ public class CalculatorScientific extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 String text = textView.getText().toString();
-                if (isSingleNumber(text)) {
-                    text = text + "^2";
-                    Expression e = new Expression(text);
-                    String res = Double.toString(e.calculate());
-                    textView.setText(res);
-                } else {
-                    Toast.makeText(getApplicationContext(), "Nie można wykonać tego obliczenia!", Toast.LENGTH_SHORT).show();
-                }
+                text = text + "^2";
+                Expression e = new Expression(text);
+                String res = Double.toString(e.calculate());
+                textView.setText(res);
             }
         });
 
@@ -157,14 +142,10 @@ public class CalculatorScientific extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 String text = textView.getText().toString();
-                if (isSingleNumber(text)) {
-                    text = "log10(" + text + ")";
-                    Expression e = new Expression(text);
-                    String res = Double.toString(e.calculate());
-                    textView.setText(res);
-                } else {
-                    Toast.makeText(getApplicationContext(), "Nie można wykonać tego obliczenia!", Toast.LENGTH_SHORT).show();
-                }
+                text = "log10(" + text + ")";
+                Expression e = new Expression(text);
+                String res = Double.toString(e.calculate());
+                textView.setText(res);
             }
         });
 
@@ -193,12 +174,43 @@ public class CalculatorScientific extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 String text = textView.getText().toString();
-                if (isSingleNumber(text)) {
-                    if (text.charAt(0) == '-') {
-                        textView.setText(text.substring(1));
-                    } else {
-                        String newText = "-" + text;
-                        textView.setText(newText);
+                if (isDigit(text.charAt(text.length() - 1))) {
+                    for (int i = 1; i <= text.length(); i++) {
+                        if ((!isDigit(text.charAt(text.length() - i)) && text.charAt(text.length() - i) != '.') || i == text.length()) {
+                            if (text.charAt(text.length() - i) == '-') {
+                                if (i < text.length()) {
+                                    if (!isDigit(text.charAt(i - 1))) {
+                                        String newString = text.substring(0, text.length() - i);
+                                        newString += text.substring(text.length() - i + 1);
+                                        textView.setText(newString);
+                                        break;
+                                    } else {
+                                        String newString = text.substring(0, text.length() - i);
+                                        newString += "+";
+                                        newString += text.substring(text.length() - i);
+                                        textView.setText(newString);
+                                        break;
+                                    }
+                                } else {
+                                    String newString = text.substring(1);
+                                    textView.setText(newString);
+                                    break;
+                                }
+                            } else {
+                                if (i == text.length()) {
+                                    String newString = "-";
+                                    newString += text;
+                                    textView.setText(newString);
+                                    break;
+                                } else {
+                                    String newString = text.substring(0, text.length() - i + 1);
+                                    newString += '-';
+                                    newString += text.substring(text.length() - i + 1);
+                                    textView.setText(newString);
+                                    break;
+                                }
+                            }
+                        }
                     }
                 } else {
                     Toast.makeText(getApplicationContext(), "Nie można zmienić znaku wyrażenia!", Toast.LENGTH_SHORT).show();
@@ -211,14 +223,10 @@ public class CalculatorScientific extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 String text = textView.getText().toString();
-                if (isSingleNumber(text)) {
-                    text = text + "%";
-                    Expression e = new Expression(text);
-                    String res = Double.toString(e.calculate());
-                    textView.setText(res);
-                } else {
-                    Toast.makeText(getApplicationContext(), "Nie można wykonać tego obliczenia!", Toast.LENGTH_SHORT).show();
-                }
+                text = text + "%";
+                Expression e = new Expression(text);
+                String res = Double.toString(e.calculate());
+                textView.setText(res);
             }
         });
 
@@ -273,7 +281,9 @@ public class CalculatorScientific extends AppCompatActivity {
 
 
     private boolean isCorrect(TextView result, Button button) {
+        clearBadResult(result);
         String text = result.getText().toString();
+        if (text.equals(DEFAULT_VALUE)) return false;
         if (isDigitClick(button)) return true;
         if (isDotClick(button)) {
             return isCorrectDotClick(text);
@@ -315,6 +325,21 @@ public class CalculatorScientific extends AppCompatActivity {
     private boolean isDotClick(Button button) {
         return (button == findViewById(R.id.p4));
     }
+
+    private void clearBadResult(TextView result) {
+        String text = result.getText().toString();
+        if (text.length() > 1) {
+            if (isAlphabetic(text.charAt(0)) || isAlphabetic(text.charAt(1))) {
+                result.setText(DEFAULT_VALUE);
+            }
+        } else {
+            if (isAlphabetic(text.charAt(0))) {
+                result.setText(DEFAULT_VALUE);
+            }
+        }
+
+    }
+
 
     @Override
     protected void onSaveInstanceState(@NonNull Bundle outState) {
