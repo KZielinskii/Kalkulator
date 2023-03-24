@@ -21,7 +21,7 @@
             android:layout_weight="0.25"
             android:gravity="center"
             android:orientation="horizontal"
-            android:padding="16dp">
+            android:padding="@dimen/normal_size">
 
             <TextView
                 android:id="@+id/result"
@@ -51,6 +51,7 @@
                 android:backgroundTint="#555599"
                 android:text="&lt;"
                 android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                android:textSize="@dimen/normal_size"
                 android:visibility="visible"
                 android:layout_marginEnd="8dp" />
 
@@ -62,6 +63,7 @@
                 android:backgroundTint="#555599"
                 android:text="C"
                 android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                android:textSize="@dimen/normal_size"
                 android:visibility="visible"
                 android:layout_marginEnd="8dp"/>
 
@@ -73,6 +75,7 @@
                 android:backgroundTint="#555599"
                 android:text="±"
                 android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                android:textSize="@dimen/normal_size"
                 android:visibility="visible"
                 android:layout_marginEnd="8dp"/>
 
@@ -84,6 +87,7 @@
                 android:backgroundTint="#555599"
                 android:text="."
                 android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                android:textSize="@dimen/normal_size"
                 android:visibility="visible" />
 
         </LinearLayout>
@@ -103,6 +107,7 @@
                 android:backgroundTint="#555599"
                 android:text="7"
                 android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                android:textSize="@dimen/normal_size"
                 android:visibility="visible"
                 android:layout_marginEnd="8dp"/>
 
@@ -114,6 +119,7 @@
                 android:backgroundTint="#555599"
                 android:text="8"
                 android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                android:textSize="@dimen/normal_size"
                 android:visibility="visible"
                 android:layout_marginEnd="8dp"/>
 
@@ -125,6 +131,7 @@
                 android:backgroundTint="#555599"
                 android:text="9"
                 android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                android:textSize="@dimen/normal_size"
                 android:visibility="visible"
                 android:layout_marginEnd="8dp"/>
 
@@ -136,6 +143,7 @@
                 android:backgroundTint="#555599"
                 android:text="/"
                 android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                android:textSize="@dimen/normal_size"
                 android:visibility="visible"
                 />
 
@@ -156,6 +164,7 @@
                 android:backgroundTint="#555599"
                 android:text="4"
                 android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                android:textSize="@dimen/normal_size"
                 android:visibility="visible"
                 android:layout_marginEnd="8dp"/>
 
@@ -167,6 +176,7 @@
                 android:backgroundTint="#555599"
                 android:text="5"
                 android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                android:textSize="@dimen/normal_size"
                 android:visibility="visible"
                 android:layout_marginEnd="8dp"/>
 
@@ -178,6 +188,7 @@
                 android:backgroundTint="#555599"
                 android:text="6"
                 android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                android:textSize="@dimen/normal_size"
                 android:visibility="visible"
                 android:layout_marginEnd="8dp"/>
 
@@ -189,6 +200,7 @@
                 android:backgroundTint="#555599"
                 android:text="*"
                 android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                android:textSize="@dimen/normal_size"
                 android:visibility="visible" />
 
         </LinearLayout>
@@ -208,6 +220,7 @@
                 android:backgroundTint="#555599"
                 android:text="1"
                 android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                android:textSize="@dimen/normal_size"
                 android:visibility="visible"
                 android:layout_marginEnd="8dp"/>
 
@@ -219,6 +232,7 @@
                 android:backgroundTint="#555599"
                 android:text="2"
                 android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                android:textSize="@dimen/normal_size"
                 android:visibility="visible"
                 android:layout_marginEnd="8dp"/>
 
@@ -230,6 +244,7 @@
                 android:backgroundTint="#555599"
                 android:text="3"
                 android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                android:textSize="@dimen/normal_size"
                 android:visibility="visible"
                 android:layout_marginEnd="8dp"/>
 
@@ -241,6 +256,7 @@
                 android:backgroundTint="#555599"
                 android:text="-"
                 android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                android:textSize="@dimen/normal_size"
                 android:visibility="visible" />
 
         </LinearLayout>
@@ -260,6 +276,7 @@
                 android:backgroundTint="#555599"
                 android:text="0"
                 android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                android:textSize="@dimen/normal_size"
                 android:visibility="visible"
                 android:layout_marginEnd="8dp"/>
 
@@ -271,6 +288,7 @@
                 android:backgroundTint="#555599"
                 android:text="+"
                 android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                android:textSize="@dimen/normal_size"
                 android:visibility="visible"
                 android:layout_marginEnd="8dp"/>
 
@@ -282,6 +300,7 @@
                 android:backgroundTint="#995555"
                 android:text="="
                 android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                android:textSize="@dimen/normal_size"
                 android:visibility="visible"
                 android:layout_marginEnd="8dp"/>
 
@@ -293,6 +312,7 @@
                 android:backgroundTint="#444488"
                 android:text="Menu"
                 android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                android:textSize="@dimen/normal_size"
                 android:visibility="visible" />
 
         </LinearLayout>

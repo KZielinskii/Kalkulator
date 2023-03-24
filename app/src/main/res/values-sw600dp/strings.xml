@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">Kalkulator</string>
+    <string name="calc_simple">Kalkulator prosty</string>
+    <string name="calc_sci">Kalkulator naukowy</string>
+    <string name="info">Informacje</string>
+    <string name="exit">Wyjdź</string>
+    <string name="result_view">0</string>
+    <string name="informations">
+        Aplikacja kalkulator posiada
+        dwa kalkulatory:\n
+        1. Zwykły kalkulator.\n
+        2. Kalkulator naukowy.\n
+        Kalkulator służy do obliczenia
+        wyrażeń matematycznych.
+    </string>
+
+    <string name="author">Autor: Kacper Zieliński</string>
+</resources>
